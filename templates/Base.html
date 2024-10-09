@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{% static 'CSS/Base.css' %}">
+      {% block style %}{% endblock %}
+      <link rel="icon" href="">
+   </head>
+   <body>
+        <div class="header">
+            <div>
+                <a href="{% url 'home' %}">
+                    <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMRC Logo">
+                </a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 35px;">
+
+                <!-- AMRC Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">AMRC</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'amrc_about' %}">About</a>
+                        <a href="{% url 'amrc_team' %}" class="end">Team</a>
+                    </div>
+                </div>
+
+                <!-- AMRC Jr Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">AMRC Jr</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'amrc_jr_about' %}">About</a>
+                        <a href="{% url 'amrc_jr_team' %}">Team</a>
+                        <a href="{% url 'amrc_jr_kasaporov' %}">Kasaporov</a>
+                        <a href="{% url 'amrc_jr_inquiry' %}">Inquiry</a>
+                        <a href="{% url 'amrc_jr_anachronism' %}" class="end">Anachronism</a>
+                    </div>
+                </div>
+
+                <!-- AMAG Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">AMAG</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'amag_about' %}">About</a>
+                        <a href="{% url 'amag_team' %}">Team</a>
+                        <a href="{% url 'amag_brics' %}" class="end">Brics</a>
+                    </div>
+                </div>
+
+                <!-- AMAG Jr Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">AMAG Jr</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'amag_jr_about' %}">About</a>
+                        <a href="{% url 'amag_jr_team' %}" class="end">Team</a>
+                    </div>
+                </div>
+
+                <!-- AMO2 Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">AMO2</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'amo2_about' %}">About</a>
+                        <a href="{% url 'amo2_team' %}" class="end">Team</a>
+                    </div>
+                </div>
+
+                <!-- Projects Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'projects_gymrats' %}" class="end">Gym Rats</a>
+                    </div>
+                </div>
+
+                <div class="archive_button">
+                    <a class="header_text" href="{% url 'archives' %}">Archives</a>
+                </div>
+            </div>
+        </div>
+
+        {% block content %}{% endblock %}
+   </body>
+
+   <footer>
+        <div class="footer">
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMRC Logo">
+                <div>
+                    <p class="footer_location_text">Al Mawakeb Al Barsha</p>
+                    <p class="footer_location_text">Dubai, UAE</p>
+                </div>
+                <p style="color: white;">© 2024 AMIC</p>
+            </div>
+            <div style="width: 500px;">
+                <p class="footer_header_text">Al Mawakeb Research Center</p>
+                <p class="footer_bio_text">The one and only Al Mawakeb Research Center, a highly prestigious and rigorous club designed to foster intelligence and competence. Made by diligent students, for diligent students.</p>
+            </div>
+        </div>
+    </footer>
+</html>

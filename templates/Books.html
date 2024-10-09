@@ -1,0 +1,27 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'CSS/Home.css' %}">
+<title>Archives - {{ club_type|title }} Books</title>
+{% endblock %}
+
+{% block content %}
+<div class="fill">
+    <div class="grid-container">
+        {% for book in books %}
+        <div style="width: 300px;">
+            <div style="display: flex; justify-content: center;">
+                <p class="text">
+                    <a href="{{ book.file.url }}" target="_blank" style="text-decoration: none; color: black;">
+                        {{ book.title }}
+                    </a> 
+                </p>
+            </div>
+        </div>
+        {% empty %}
+        <p>No books available for {{ club_type|title }}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
