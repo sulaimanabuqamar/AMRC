@@ -180,12 +180,12 @@
         }
         var userAgent = navigator.userAgent;
         if (userAgent.toLowerCase().indexOf("iphone") || userAgent.toLowerCase().indexOf("android")) {
-            document.body.addEventListener('touchstart', function (event) {
+            document.addEventListener('touchstart', function (event) {
                 touchstartX = event.changedTouches[0].screenX;
                 touchstartY = event.changedTouches[0].screenY;
             }, false);
 
-            document.body.addEventListener('touchend', function (event) {
+            document.addEventListener('touchend', function (event) {
                 touchendX = event.changedTouches[0].screenX;
                 touchendY = event.changedTouches[0].screenY;
                 // console.log(event.srcElement.parentElement.parentElement.parentElement.parentElement.classList.contains("rulestablesource"));
