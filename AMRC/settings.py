@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-=(mmhbzpb*s1ehaeita02wbvsa9fob8mh-n227252jx9cq-pa_
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS=['https://*.amrc.amsi.ae']
 
 # Application definition
 
