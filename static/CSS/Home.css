@@ -34,3 +34,27 @@
     font-family: Times New Roman; 
     font-weight: 400;
 }
+.buttonrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+@media only screen and (max-width: 1000px) {
+    .left_button {
+        scale: 0.5;
+    }
+    .right_button {
+        scale: 0.5;
+    }
+    .text {
+        max-width: 250px;
+    }
+    .buttonrow  {
+        flex-direction: column;
+        width: fit-content;
+    }
+    .books {
+        width: 75px;
+    }
+}
