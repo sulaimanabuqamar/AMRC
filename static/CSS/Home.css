@@ -1,0 +1,62 @@
+.logo {
+    width: 550px;
+}
+
+.books {
+    object-fit: contain;
+    width: 220px;
+}
+
+.left_button {
+    display: block;
+    width: 265px; 
+    height: 60px; 
+    border-radius: 20px; border: 3px #2D3051 solid
+}
+
+.right_button {
+    display: block;
+    width: 265px; 
+    height: 60px;
+    background: #2D3051; 
+    border-radius: 20px;
+}
+
+.left_button_text {
+    color: #2D3051; 
+    font-size: 35px; 
+    font-family: Times New Roman; 
+    font-weight: 400;
+}
+
+.right_button_text {
+    color: #ECF9FF; 
+    font-size: 35px; 
+    font-family: Times New Roman; 
+    font-weight: 400;
+}
+.buttonrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+@media only screen and (max-width: 1000px) {
+    .left_button {
+        scale: 0.5;
+    }
+    .right_button {
+        scale: 0.5;
+    }
+    .text {
+        max-width: 250px;
+    }
+    .buttonrow  {
+        width: fit-content;
+        gap: 0px;
+        width: 350px;
+    }
+    .books {
+        display: none;
+    }
+}
