@@ -1,0 +1,23 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block  style%}
+<link rel="stylesheet" href="{% static 'CSS/Home.css' %}">
+<title>AMAG Jr - Team</title>
+{% endblock %}
+
+{% block content %}
+<div class="fill centerer">
+    <p class="title">Heads</p>
+    <div class="grid-container">
+        {% for head in heads %}
+            <div class="grid-item">
+                <img class="pfp" src="{{ head.pfp.url }}" alt="{{ head.name }}">
+                <p class="text">{{ head.name }}</p>
+            </div>
+        {% empty %}
+            <p class="text">No heads available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

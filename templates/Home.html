@@ -1,0 +1,29 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block  style%}
+<link rel="stylesheet" href="{% static 'CSS/Home.css' %}">
+<link rel="stylesheet" href="{% static 'CSS/Base.css' %}">
+<title>AMRC - Home</title>
+{% endblock %}
+
+{% block content %}
+    <div class="fill centerer" style="display: flex; flex-direction; row; justify-content: center; padding: 150px;">
+        <div class="centerer">
+            <img class="logo" src="{% static '../media/images/Logo.png' %}" alt="AMRC Logo">
+            <p class="title">Al Mawakeb Research Center</p>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <p class="text">The one and only Al Mawakeb Research Center, a highly prestigious and rigorous club designed to foster intelligence and competence. Made by diligent students, for diligent students.</p>
+            </div>
+            <div class="buttonrow">
+                <a href="/Archives/" class="left_button" style="display: flex; align-items: center; justify-content: center;">
+                    <p class="left_button_text">Archives</p>
+                </a>
+                <a href="{% url 'amrc_about' %}" class="right_button" style="display: flex; align-items: center; justify-content: center;">
+                    <p class="right_button_text">About Us</p>
+                </a>
+            </div>
+        </div>
+        <img class="books" src="{% static '../media/images/Books.png' %}" alt="AMRC Logo">
+    </div>
+{% endblock %}

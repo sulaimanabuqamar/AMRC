@@ -1,0 +1,49 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'CSS/Team.css' %}">
+<title>AMRC Jr - Team</title>
+{% endblock %}
+
+{% block content %}
+<div class="fill centerer">
+
+    <p class="title">Barsha Heads</p>
+    <div class="grid-container">
+        {% for head in barsha_heads %}
+            <div class="grid-item">
+                <img class="pfp" src="{{ head.pfp.url }}" alt="{{ head.name }}">
+                <p class="text">{{ head.name }}</p>
+            </div>
+        {% empty %}
+            <p class="text">No heads available.</p>
+        {% endfor %}
+    </div>
+
+    <p class="title">Garhoud Heads</p>
+    <div class="grid-container">
+        {% for head in garhoud_heads %}
+            <div class="grid-item">
+                <img class="pfp" src="{{ head.pfp.url }}" alt="{{ head.name }}">
+                <p class="text">{{ head.name }}</p>
+            </div>
+        {% empty %}
+            <p class="text">No heads available.</p>
+        {% endfor %}
+    </div>
+
+    <p class="title">Khawaneej Heads</p>
+    <div class="grid-container">
+        {% for head in khawaneej_heads %}
+            <div class="grid-item">
+                <img class="pfp" src="{{ head.pfp.url }}" alt="{{ head.name }}">
+                <p class="text">{{ head.name }}</p>
+            </div>
+        {% empty %}
+            <p class="text">No heads available.</p>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

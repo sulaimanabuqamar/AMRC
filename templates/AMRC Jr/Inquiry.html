@@ -1,0 +1,38 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block  style%}
+<link rel="stylesheet" href="{% static 'CSS/Home.css' %}">
+<title>AMRC Jr - Inquiry</title>
+{% endblock %}
+
+{% block content %}
+<div class="fill centerer">
+      <div  class="headercontrol">
+          <p class="title">About</p>
+          {% if about.logo %}
+              <img class="clubslogo" src="{{ about.logo.url }}" alt="Logo for {{ about.club }}">
+          {% endif %}
+      </div>
+      <p class="text">{{ about.about_text }}</p>
+      <br>
+      <div class="club-photos">
+          {% for photo in about.photos.all %}
+              <img src="{{ photo.photo.url }}" alt="Photo for {{ about.club }}">
+          {% empty %}
+              <p>No photos available for this club.</p>
+          {% endfor %}
+      </div>
+    <p class="title">Heads</p>
+    <div class="grid-container">
+        {% for head in heads %}
+            <div class="grid-item">
+                <img class="pfp" src="{{ head.pfp.url }}" alt="{{ head.name }}">
+                <p class="text">{{ head.name }}</p>
+            </div>
+        {% empty %}
+            <p class="text">No heads available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

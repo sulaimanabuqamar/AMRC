@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="{% static 'CSS/Base.css' %}">
+      {% block style %}{% endblock %}
+      <link rel="icon" href="">
+   </head>
+   <body>
+        <div class="header">
+            <button onclick="openDrawer()" style="margin-left: 20px" class="emptyBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#FFFFFF"><path d="M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z"/></svg>
+            </button>
+            <div class="navbarControl">
+                <a href="{% url 'home' %}">
+                    <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMRC Logo">
+                </a>
+            </div>
+            <div style="align-items: center; gap: 35px;" class="navbarControl flex">
+
+                <!-- AMRC Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">AMRC</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'amrc_about' %}">About</a>
+                        <a href="{% url 'amrc_team_barsha' %}">Barsha Team</a>
+                        <a href="{% url 'amrc_team_garhoud' %}">Garhoud Team</a>
+                        <a href="{% url 'amrc_team_khawaneej' %}" class="end">Khawaneej Team</a>
+                    </div>
+                </div>
+
+                <!-- AMRC Jr Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">AMRC Jr</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'amrc_jr_about' %}">About</a>
+                        <a href="{% url 'amrc_jr_team' %}">Team</a>
+                        <a href="{% url 'amrc_jr_kasparov' %}">kasparov</a>
+                        <a href="{% url 'amrc_jr_inquiry' %}">Inquiry</a>
+                        <a href="{% url 'amrc_jr_anachronism' %}" class="end">Anachronism</a>
+                    </div>
+                </div>
+
+                <!-- AMAG Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">AMAG</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'amag_about' %}">About</a>
+                        <a href="{% url 'amag_team' %}">Team</a>
+                        <a href="{% url 'amag_brics' %}" class="end">Brics</a>
+                    </div>
+                </div>
+
+                <!-- AMAG Jr Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">AMAG Jr</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'amag_jr_about' %}">About</a>
+                        <a href="{% url 'amag_jr_team' %}" class="end">Team</a>
+                    </div>
+                </div>
+
+                <!-- AMO2 Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">AMO2</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'amo2_about' %}">About</a>
+                        <a href="{% url 'amo2_team' %}" class="end">Team</a>
+                    </div>
+                </div>
+
+                <!-- Projects Dropdown -->
+                <div class="dropdown">
+                    <a class="header_text dropbtn">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'projects_gymrats' %}" class="end">Gym Rats</a>
+                    </div>
+                </div>
+
+                <div class="archive_button">
+                    <a class="header_text" href="{% url 'archives' %}">Archives</a>
+                </div>
+            </div>
+        </div>
+        <div class="drawerBG" style="animation: dismissDrawerBG ease-in-out 0s forwards" onclick="if(event.target == this) {dismissDrawer();}">
+        <div class="drawer"  style="animation: dismissDrawer ease-in-out 0s forwards">
+            <div class="drawerItem" style="margin-top: 30px;">
+                <a href="{% url 'home' %}">
+                    <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMRC Logo">
+                </a>
+            </div>
+            <!-- AMRC Dropdown -->
+            <div class="dropdown drawerItem">
+                <a class="drawerText header_text dropbtn">AMRC</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'amrc_about' %}">About</a>
+                    <a href="{% url 'amrc_team_barsha' %}">Barsha</a>
+                    <a href="{% url 'amrc_team_garhoud' %}">Garhoud</a>
+                    <a href="{% url 'amrc_team_khawaneej' %}" class="end">Khawaneej</a>
+                </div>
+            </div>
+
+            <!-- AMRC Jr Dropdown -->
+            <div class="dropdown drawerItem">
+                <a class="drawerText header_text dropbtn">AMRC Jr</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'amrc_jr_about' %}">About</a>
+                    <a href="{% url 'amrc_jr_team' %}">Team</a>
+                    <a href="{% url 'amrc_jr_kasparov' %}">Kasparov</a>
+                    <a href="{% url 'amrc_jr_inquiry' %}">Inquiry</a>
+                    <a href="{% url 'amrc_jr_anachronism' %}" class="end">Anachronism</a>
+                </div>
+            </div>
+
+            <!-- AMAG Dropdown -->
+            <div class="dropdown drawerItem">
+                <a class="drawerText header_text dropbtn">AMAG</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'amag_about' %}">About</a>
+                    <a href="{% url 'amag_team' %}">Team</a>
+                    <a href="{% url 'amag_brics' %}" class="end">Brics</a>
+                </div>
+            </div>
+
+            <!-- AMAG Jr Dropdown -->
+            <div class="dropdown drawerItem">
+                <a class="drawerText header_text dropbtn">AMAG Jr</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'amag_jr_about' %}">About</a>
+                    <a href="{% url 'amag_jr_team' %}" class="end">Team</a>
+                </div>
+            </div>
+
+            <!-- AMO2 Dropdown -->
+            <div class="dropdown drawerItem">
+                <a class="drawerText header_text dropbtn">AMO2</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'amo2_about' %}">About</a>
+                    <a href="{% url 'amo2_team' %}" class="end">Team</a>
+                </div>
+            </div>
+
+            <!-- Projects Dropdown -->
+            <div class="dropdown drawerItem">
+                <a class="drawerText header_text dropbtn">Projects</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'projects_gymrats' %}" class="end">Gym Rats</a>
+                </div>
+            </div>
+
+            <div class="archive_button">
+                <a class="drawerText header_text drawerMainBtn" href="{% url 'archives' %}">Archives</a>
+            </div>
+        </div>
+    </div>
+        {% block content %}{% endblock %}
+   </body>
+
+   <footer  class="footer">
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMRC Logo">
+                <div>
+                    <p class="footer_location_text">Al Mawakeb Al Barsha</p>
+                    <p class="footer_location_text">Dubai, UAE</p>
+                </div>
+                <p style="color: white;">© 2024 AMIC</p>
+            </div>
+            <div class="footercontrol">
+                <p class="footer_header_text">Al Mawakeb Research Center</p>
+                <p class="footer_bio_text">The one and only Al Mawakeb Research Center, a highly prestigious and rigorous club designed to foster intelligence and competence. Made by diligent students, for diligent students.</p>
+            </div>
+    </footer>
+    <script>
+        function dismissDrawer() {
+            document.getElementsByClassName("drawer")[0].style.animation = "dismissDrawer ease-in-out 0.2s forwards";
+            document.getElementsByClassName("drawerBG")[0].style.animation = "dismissDrawerBG ease-in-out 0.5s forwards";
+        }
+        function openDrawer() {
+            document.getElementsByClassName("drawerBG")[0].style.animation = "openDrawerBG ease-in-out 0.4s forwards";
+            document.getElementsByClassName("drawer")[0].style.animation = "openDrawer ease-in-out 0.2s forwards";
+        }
+        var userAgent = navigator.userAgent;
+        if (userAgent.toLowerCase().indexOf("iphone") || userAgent.toLowerCase().indexOf("android")) {
+            document.addEventListener('touchstart', function (event) {
+                touchstartX = event.changedTouches[0].screenX;
+                touchstartY = event.changedTouches[0].screenY;
+            }, false);
+
+            document.addEventListener('touchend', function (event) {
+                touchendX = event.changedTouches[0].screenX;
+                touchendY = event.changedTouches[0].screenY;
+                // console.log(event.srcElement.parentElement.parentElement.parentElement.parentElement.classList.contains("rulestablesource"));
+                if(event.srcElement.parentElement != null && event.srcElement.parentElement.parentElement != null && event.srcElement.parentElement.parentElement.parentElement != null && event.srcElement.parentElement.parentElement.parentElement.parentElement != null) {
+                    if(!event.srcElement.parentElement.parentElement.parentElement.parentElement.classList.contains("rulestablesource")) {
+                        handleGesture();
+                    }
+                }
+                else {
+                    handleGesture();
+                }
+                // handleGesture();
+            }, false);
+        }
+
+        function handleGesture() {
+            if (touchendX < touchstartX - 50 && touchendY >= touchstartY - 30 && touchendY <= touchstartY + 30) {
+                console.log('Swiped Left');
+                dismissDrawer();
+            }
+
+            if (touchendX > touchstartX + 50 && touchendY >= touchstartY - 30 && touchendY <= touchstartY + 30) {
+                console.log('Swiped Right');
+                openDrawer();
+            }
+
+            if (touchendY < touchstartY) {
+                console.log('Swiped Up');
+            }
+
+            if (touchendY > touchstartY) {
+                console.log('Swiped Down');
+            }
+
+            if (touchendY === touchstartY) {
+                console.log('Tap');
+            }
+        }
+
+    </script>
+</html>

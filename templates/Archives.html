@@ -1,0 +1,38 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'CSS/Home.css' %}">
+<title>AMRC - Archives</title>
+{% endblock %}
+
+{% block content %}
+<div class="fill centerer">
+    <div class="grid-container">
+        <div style="width: 300px;">
+            <a href="{% url 'books' club_type='amrc' %}">
+                <img class="bookslogo" src="{% static '../media/images/Logo.png' %}" alt="AMRC Logo">
+                <div style="display: flex; justify-content: center;">
+                    <p class="text">AMRC</p>
+                </div>
+            </a>
+        </div>
+        <div style="width: 300px;">
+            <a href="{% url 'books' club_type='amrc_jr' %}">
+                <img class="bookslogo" src="{% static '../media/images/AMRC_Jr.png' %}" alt="AMRC Jr. Logo">
+                <div style="display: flex; justify-content: center;">
+                    <p class="text">AMRC Jr.</p>
+                </div>
+            </a>
+        </div>
+        <div style="width: 300px;">
+            <a href="{% url 'books' club_type='amo2' %}">
+                <img class="bookslogo" src="{% static '../media/images/AMO2.jpeg' %}" alt="AMO2 Logo">
+                <div style="display: flex; justify-content: center;">
+                    <p class="text">AMO2</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

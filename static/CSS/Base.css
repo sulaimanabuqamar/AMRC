@@ -1,0 +1,371 @@
+body {
+    display: block;
+    margin: 0px;
+}
+
+.header {
+    display: flex;
+    height: 100px;
+    background: #2D3051;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.archive_button {
+    height: 40px;
+    background: #116FB7;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.headerlogo {
+    width: 150px;
+}
+
+.header_text {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-family: Times New Roman;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+.footer {
+    /* gap: 300px; */
+    display: flex;
+    height: 250px;
+    background: #2D3051;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.footer_location_text {
+    color: #ECF9FF;
+    font-size: 18px;
+    font-family: Roboto;
+    font-weight: 300;
+    margin: 5px 0px;
+}
+
+.footer_header_text {
+    text-align: right;
+    color: #ECF9FF;
+    font-size: 22px;
+    font-family: Times New Roman;
+    font-weight: 700;
+}
+
+.footer_bio_text {
+    text-align: right;
+    color: #ECF9FF;
+    font-size: 18px;
+    font-family: Times New Roman;
+    font-weight: 400;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: white;
+    font-size: 25px;
+    font-family: Times New Roman;
+    font-weight: 400;
+    text-align: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    border-radius: 0px 0px 20px 20px;
+    background-color: #2D3051;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%); /* Center the dropdown under the header */
+}
+
+.dropdown-content a {
+    font-size: 20px;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: Times New Roman;
+}
+
+.dropdown-content a:hover {
+    background-color: #116FB7;
+}
+.dropdown-content a:hover.end {
+    background-color: #116FB7;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.fill {
+    padding: 50px 150px;
+}
+
+.title {
+    color: #0C71B8; 
+    font-size: 30px; 
+    font-family: Times New Roman; 
+    font-weight: 700;
+}
+
+.text {
+    color: #67B432; 
+    font-size: 20px; 
+    font-family: Times New Roman; 
+    font-weight: 400;
+}
+
+.pfp {
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.club-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+.club-photos img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club-photos img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.club-photos p {
+    font-size: 1.2rem;
+    color: #777;
+    text-align: center;
+    grid-column: span 3;
+}
+
+.bookslogo {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@keyframes dismissDrawer {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes openDrawer {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+@keyframes dismissDrawerBG {
+    from  {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    to  {
+        background-color: rgba(0, 0, 0, 0);
+        display: none;
+    }
+    
+}
+@keyframes openDrawerBG {
+    from  {
+        background-color: rgba(0, 0, 0, 0);
+        display: none;
+    }
+    to  {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+}
+
+.drawerBG {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+}
+.drawer {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+.drawerItem {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    padding-bottom: 10px;
+}
+.drawerText {
+    color: black;
+}
+.navbarControl.flex {
+    display: flex;
+}
+.emptyBtn {
+    display: none;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    transition-duration: 0.1s;
+}
+.emptyBtn:active {
+    opacity: 0.5;
+}
+.centerer {
+    display: block;
+}
+.footercontrol {
+    width: 500px;
+}
+
+.clubslogo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border: #0C71B8 solid 3px;
+}
+.headercontrol {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media only screen and (max-width: 1000px) {
+    .body {
+        width: 100%;
+    }
+    .dropdown-content {
+        margin-top: 50px;
+    }
+    .archive_button {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin: 10px 30px;
+    }
+    .navbarControl {
+        display: none;
+    }
+    .navbarControl.flex {
+        display: none;
+    }
+    .header {
+        justify-content: start;
+    }
+    .footer {
+        position: relative;
+        bottom: -11%;
+        /* width: 100%; */
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .emptyBtn {
+        display: block;
+    }
+    .logo {
+        scale: 0.5;
+        width: 250px;
+    }
+    .fill {
+        padding: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .title {
+        font-size: 20px;
+        width: fit-content;
+    }
+    .text {
+        font-size: 15px;
+    }
+
+    .footer_location_text {
+        font-size: 14px;
+    }
+
+    .footer_header_text {
+        font-size: 17px;
+        max-width: 200px;
+    }
+
+    .footer_bio_text {
+        font-size: 14px;
+        max-width: 200px;
+    }
+    .footercontrol {
+        width: unset;
+    }
+    .centerer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .clubslogo {
+        width: 100px;
+        height: 100px;
+        border: #0C71B8 solid 2px;
+    }
+    .headercontrol {
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+}
